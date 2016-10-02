@@ -1,5 +1,6 @@
 -- 初始化配置
 function setup()
+    mSleep(1000)
     rotateScreen(90)
 end
 
