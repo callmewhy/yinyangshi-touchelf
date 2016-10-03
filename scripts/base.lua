@@ -23,9 +23,11 @@ end
 
 -- 等到战斗结束
 function waitUntilBattleOver(handler)
-    local p = {110, 1500}
-    while getColor(p[1], p[2]) == 0x836d54 or getColor(p[1], p[2]) == 0x665341 do
+    local p = {109, 1438}
+    logDebug(getColor(p[1], p[2]))
+    while getColor(p[1], p[2]) == 0xEDE8D5 do
         handler()
         mSleep(1000)
     end
+    logDebug('战斗结束')
 end

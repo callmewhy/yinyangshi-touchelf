@@ -1,12 +1,6 @@
 package.path=package.path .. ";/var/touchelf/scripts/?.lua"
 require "base"
 
-function clickAuto()
-   click(89, 1445)
-   mSleep(2000)
-   click(89, 1445)
-end
-
 function main()
     setup()
     
@@ -16,8 +10,19 @@ function main()
     
     -- 点击 准备 按钮
     clickReady()
+    
+    -- 等待对面准备
+    local p = {109, 1438}
+    while getColor(p[1], p[2]) == 0x222233 do
+        mSleep(1000)
+    end
 
     -- 检查是否处于战斗状态
+    local clickAuto = function()
+        click(89, 1445)
+        mSleep(2000)
+        click(89, 1445)
+    end
     waitUntilBattleOver(clickAuto)
     
     -- 检查是否结束
