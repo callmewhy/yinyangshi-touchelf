@@ -1,5 +1,5 @@
 package.path=package.path .. ";/var/touchelf/scripts/?.lua"
-require "base"
+require "阴阳师-基础"
 
 function main()
     setup()
